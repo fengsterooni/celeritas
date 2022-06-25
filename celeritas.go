@@ -77,6 +77,7 @@ func (c *Celeritas) Init(p initPaths) error {
 			return err
 		}
 	}
+
 	return nil
 }
 
@@ -94,6 +95,7 @@ func (c *Celeritas) ListenAndServe() {
 	err := srv.ListenAndServe()
 	c.ErrorLog.Fatal(err)
 }
+
 func (c *Celeritas) checkDotEnv(path string) error {
 	err := c.CreateFileIfNotExist(fmt.Sprintf("%s/.env", path))
 	if err != nil {
