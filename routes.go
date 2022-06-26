@@ -17,5 +17,7 @@ func (c *Celeritas) routes() http.Handler {
 
 	mux.Use(middleware.Recoverer)
 
+	mux.Use(c.SessionLoad)
+
 	return mux
 }
