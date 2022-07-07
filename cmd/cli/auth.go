@@ -9,7 +9,7 @@ import (
 func doAuth() error {
 	// migration
 	dbType := cel.DB.DataType
-	fileName := fmt.Sprintf("%d_create_auth_table", time.Now().UnixMicro())
+	fileName := fmt.Sprintf("%d_create_auth_tables", time.Now().UnixMicro())
 
 	upFile := cel.RootPath + "/migrations/" + fileName + ".up.sql"
 	downFile := cel.RootPath + "/migrations/" + fileName + ".down.sql"
