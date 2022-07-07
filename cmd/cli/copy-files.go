@@ -42,5 +42,5 @@ func fileExists(fileToCheck string) bool {
 		return false
 	}
 
-	return false
+	return true
 }
