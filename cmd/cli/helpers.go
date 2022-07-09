@@ -39,8 +39,7 @@ func getDSN() string {
 				os.Getenv("DATABASE_HOST"),
 				os.Getenv("DATABASE_PORT"),
 				os.Getenv("DATABASE_NAME"),
-				os.Getenv("DATABASE_SSL_MODE"),
-			)
+				os.Getenv("DATABASE_SSL_MODE"))
 		} else {
 			dsn = fmt.Sprintf("postgres://%s@%s:%s/%s?sslmode=%s",
 				os.Getenv("DATABASE_USER"),
