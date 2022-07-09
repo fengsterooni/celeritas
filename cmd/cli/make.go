@@ -12,7 +12,7 @@ func doMake(arg2, arg3 string) error {
 	case "migration":
 		dbType := cel.DB.DataType
 		if arg3 == "" {
-			exitGracefully(errors.New("you must give the migration a new"))
+			exitGracefully(errors.New("you must give the migration a name"))
 		}
 
 		fileName := fmt.Sprintf("%d_%s", time.Now().UnixMicro(), arg3)
