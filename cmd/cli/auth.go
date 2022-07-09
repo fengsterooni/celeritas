@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"time"
 )
 
@@ -14,7 +13,7 @@ func doAuth() error {
 	upFile := cel.RootPath + "/migrations/" + fileName + ".up.sql"
 	downFile := cel.RootPath + "/migrations/" + fileName + ".down.sql"
 
-	log.Println(dbType, upFile, downFile)
+	// log.Println(dbType, upFile, downFile)
 
 	err := copyFilefromTemplate("templates/migrations/auth_tables."+dbType+".sql", upFile)
 	if err != nil {
