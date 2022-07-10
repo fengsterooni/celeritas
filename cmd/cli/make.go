@@ -86,11 +86,20 @@ func doMake(arg2, arg3 string) error {
 		}
 
 		fileName := cel.RootPath + "/data/" + strings.ToLower(modelName) + ".go"
+		if fileExists(fileName) {
+			exitGracefully(errors.New(fileName + " already exists!"))
+		}
 
 		model = strings.ReplaceAll(model, "$MODELNAME$", strcase.ToCamel(modelName))
 		model = strings.ReplaceAll(model, "$TABLENAME$", tableName)
 
 		err = copyDataToFile([]byte(model), fileName)
+		if err != nil {
+			exitGracefully(err)
+		}
+
+	case "session":
+		err := doSessionTable()
 		if err != nil {
 			exitGracefully(err)
 		}
