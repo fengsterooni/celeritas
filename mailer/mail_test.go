@@ -40,7 +40,7 @@ func TestMail_SendUsingChan(t *testing.T) {
 	msg.To = "not_an_email_address"
 	mailer.Jobs <- msg
 	res = <-mailer.Results
-	if res.Error != nil {
+	if res.Error == nil {
 		t.Error(errors.New("no error received with invalid to address"))
 	}
 }
