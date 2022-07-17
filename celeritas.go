@@ -120,10 +120,10 @@ func (c *Celeritas) New(rootPath string) error {
 
 	c.InfoLog = infoLog
 	c.ErrorLog = errorLog
-	c.Mail = c.createMailer()
 	c.Debug, _ = strconv.ParseBool(os.Getenv("DEBUG"))
 	c.Verion = verion
 	c.RootPath = rootPath
+	c.Mail = c.createMailer()
 	c.Routes = c.routes().(*chi.Mux)
 
 	c.config = config{
