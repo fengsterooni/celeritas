@@ -8,19 +8,21 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func setup() {
-	err := godotenv.Load()
-	if err != nil {
-		exitGracefully(err)
-	}
+func setup(arg1, arg2 string) {
+	if arg1 != "new" && arg1 != "version" && arg1 != "help" {
+		err := godotenv.Load()
+		if err != nil {
+			exitGracefully(err)
+		}
 
-	path, err := os.Getwd()
-	if err != nil {
-		exitGracefully(err)
-	}
+		path, err := os.Getwd()
+		if err != nil {
+			exitGracefully(err)
+		}
 
-	cel.RootPath = path
-	cel.DB.DataType = os.Getenv("DATABASE_TYPE")
+		cel.RootPath = path
+		cel.DB.DataType = os.Getenv("DATABASE_TYPE")
+	}
 }
 
 func getDSN() string {

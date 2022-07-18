@@ -20,5 +20,7 @@ vendor/
 # Tmp binary
 tmp/
 
+dist/
+
 # Go workspace file
 go.work
