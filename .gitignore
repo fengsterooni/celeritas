@@ -20,7 +20,10 @@ vendor/
 # Tmp binary
 tmp/
 
-dist/
+dist/*
+
+.idea
+coverage.out
 
 # Go workspace file
 go.work
